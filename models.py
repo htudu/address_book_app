@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String
 from database import Base
 
-# Define To Do class inheriting from Base
+# Define Address class inheriting from Base
 class Address(Base):
     __tablename__ = 'address'
     id = Column(Integer, primary_key=True)

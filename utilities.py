@@ -1,4 +1,7 @@
 import math
+from database import SessionLocal
+
+# Helper function to check the distance 
 
 def distance_check(lat1, lon1, lat2, lon2, dist):
     radius = 6373.0
@@ -13,3 +16,11 @@ def distance_check(lat1, lon1, lat2, lon2, dist):
         return True
     else:
         return False
+
+# Helper function to get database session
+def get_session():
+    session = SessionLocal()
+    try:
+        yield session
+    finally:
+        session.close()
